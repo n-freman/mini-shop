@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ReadOnlyModelViewSet
 
-# Create your views here.
+from .models import LookBook
+from .serializers import LookBookSerializer
+
+
+class LookBookViewSet(ReadOnlyModelViewSet):
+    serializer_class = LookBookSerializer
+    queryset = LookBook.objects.prefetch_related('images').all()
+

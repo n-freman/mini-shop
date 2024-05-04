@@ -10,14 +10,17 @@ from .models import (
 
 class ProductImageInline(admin.StackedInline):
     model = ProductImage
+    extra = 0
 
 
 class ProductColorInline(admin.StackedInline):
     model = ProductColor
+    extra = 0
 
 
 class ProductSizeInline(admin.StackedInline):
     model = ProductSize
+    extra = 0
 
 
 class ProductAdminConfig(admin.ModelAdmin):
