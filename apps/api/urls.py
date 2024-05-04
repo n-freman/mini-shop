@@ -5,7 +5,11 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from categories.views import CategoryViewSet
+
 router = routers.DefaultRouter()
+
+router.register('categories', CategoryViewSet, 'categories')
 
 
 urlpatterns = [
