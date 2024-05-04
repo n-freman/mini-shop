@@ -15,28 +15,36 @@ class Product(models.Model):
         db_table = 'products'
 
 
-class ProductRelated(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-
-    class Meta:
-        abstract = True
-
-
-class ProductImage(ProductRelated):
+class ProductImage(models.Model):
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name='images'
+    )
     image = models.ImageField(upload_to='products')
 
     class Meta:
         db_table = 'product_images'
 
 
-class ProductColor(ProductRelated):
+class ProductColor(models.Model):
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name='colors'
+    )
     color = models.CharField(max_length=16)
 
     class Meta:
         db_table = 'product_color'
 
 
-class ProductSize(ProductRelated):
+class ProductSize(models.Model):
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name='sizes'
+    )
     size = models.CharField(max_length=16)
 
     class Meta:

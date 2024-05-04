@@ -6,11 +6,12 @@ from rest_framework_simplejwt.views import (
 )
 
 from categories.views import CategoryViewSet
+from products.views import ProductViewSet
 
 router = routers.DefaultRouter()
 
 router.register('categories', CategoryViewSet, 'categories')
-
+router.register('products', ProductViewSet, 'products')
 
 urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
