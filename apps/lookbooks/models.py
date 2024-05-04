@@ -12,7 +12,11 @@ class LookBook(models.Model):
 
 
 class LookBookImage(models.Model):
-    lookbook = models.ForeignKey(LookBook, on_delete=models.CASCADE)
+    lookbook = models.ForeignKey(
+        LookBook,
+        on_delete=models.CASCADE,
+        related_name='images'
+    )
     image = models.ImageField(upload_to='lookbooks')
 
     class Meta:
