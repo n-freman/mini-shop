@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "phonenumber_field",
     "django_filters",
     "drf_spectacular",
+    "colorfield",
 ]
 
 MIDDLEWARE = [

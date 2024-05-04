@@ -1,4 +1,5 @@
 from django.db import models
+from colorfield.fields import ColorField
 
 from categories.models import Category
 
@@ -36,7 +37,8 @@ class ProductColor(models.Model):
         on_delete=models.CASCADE,
         related_name='colors'
     )
-    color = models.CharField(max_length=16)
+    title = models.CharField(max_length=20)
+    color = ColorField(default='#FF0000')
 
     class Meta:
         db_table = 'product_color'
