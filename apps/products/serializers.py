@@ -29,9 +29,6 @@ class ProductColorSerializer(serializers.ModelSerializer):
         model = ProductColor
         fields = ['color', 'title']
 
-    def to_representation(self, instance):
-        return instance.color
-
 
 class ProductSerializer(serializers.ModelSerializer):
     sizes = ProductSizeSerializer(many=True)
