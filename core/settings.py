@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     "products",
     "lookbooks",
     "blog",
+    "orders",
+
+    "phonenumber_field",
 ]
 
 MIDDLEWARE = [
