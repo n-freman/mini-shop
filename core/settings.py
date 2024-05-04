@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "categories",
     "products",
     "lookbooks",
+    "blog",
 ]
 
 MIDDLEWARE = [
