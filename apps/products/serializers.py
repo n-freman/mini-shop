@@ -27,7 +27,7 @@ class ProductColorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProductColor
-        fields = ['color']
+        fields = ['color', 'title']
 
     def to_representation(self, instance):
         return instance.color
