@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "users",
     "categories",
     "products",
+    "lookbooks",
 ]
 
 MIDDLEWARE = [
