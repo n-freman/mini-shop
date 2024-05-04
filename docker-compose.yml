@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    volumes:
+      - .:/usr/src/app
+      - static_volume:/usr/src/app/static
+      - media_volume:/usr/src/app/media
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+    ports:
+      - 8000:8000
+  db:
+    image: postgres:15
+    ports:
+      - 8080:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env.db
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+
