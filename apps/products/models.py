@@ -14,6 +14,9 @@ class Product(models.Model):
     class Meta:
         db_table = 'products'
 
+    def __str__(self):
+        return self.title
+
 
 class ProductImage(models.Model):
     product = models.ForeignKey(
@@ -38,6 +41,9 @@ class ProductColor(models.Model):
     class Meta:
         db_table = 'product_color'
 
+    def __str__(self):
+        return self.color
+
 
 class ProductSize(models.Model):
     product = models.ForeignKey(
@@ -49,4 +55,8 @@ class ProductSize(models.Model):
 
     class Meta:
         db_table = 'product_size'
+
+    def __str__(self):
+        return self.size
+
 
