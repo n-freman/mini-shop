@@ -6,11 +6,13 @@ from rest_framework_simplejwt.views import (
 )
 
 from categories.views import CategoryViewSet
+from users.views import RegistrationViewSet
 from products.views import ProductViewSet
 
 router = routers.DefaultRouter()
 
 router.register('categories', CategoryViewSet, 'categories')
+router.register('register', RegistrationViewSet, 'users')
 router.register('products', ProductViewSet, 'products')
 
 urlpatterns = [
